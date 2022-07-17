@@ -1,10 +1,10 @@
 import React from "react";
 
-const TimeAndLocation = () => {
+const TimeAndLocation = ({ weather: { name, country } }) => {
   return (
     <div className="timeAndLocation">
       <p>Time and location</p>
-      <h1>Moscow, Ru</h1>
+      <h1>{`${name}, ${country}`}</h1>
     </div>
   );
 };

@@ -99,3 +99,40 @@
     font-size: 50px;
   }
 }
+
+.weatherDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .temperatureAndDetails {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    h7 {
+      color: #a1e2d8;
+    }
+    p {
+      color: #ffffff;
+      font-size: 60px;
+    }
+  }
+  .humidityAndWind {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .humidity,
+    .wind,
+    .temperature {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #ffffff;
+      font-size: 14px;
+      p {
+        padding: 0 5px;
+      }
+    }
+  }
+}

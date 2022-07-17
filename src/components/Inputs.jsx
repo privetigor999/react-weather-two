@@ -10,7 +10,7 @@ const Inputs = () => {
         <UilMapMarker className="image" />
       </div>
       <div className="rightSide">
-        <button>°C</button>
+        <button name="metric">°C</button>
         <p>|</p>
         <button>°F</button>
       </div>
