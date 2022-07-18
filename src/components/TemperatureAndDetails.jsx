@@ -1,24 +1,31 @@
 import React from "react";
 import { UilTemperatureHalf, UilTear, UilWind } from "@iconscout/react-unicons";
+import { iconUrl } from "./services/service";
 
-const TemperatureAndDetails = () => {
+const TemperatureAndDetails = ({
+  weather: { icon, humidity, temp, feels_like, details },
+  units,
+}) => {
+  const toggleUnits = () => {
+    return units == "metric" ? "C" : "F";
+  };
   return (
     <div className="weatherDetails">
-      <img src="http://openweathermap.org/img/wn/01d@2x.png" />
+      <img src={iconUrl(icon)} />
       <div className="temperatureAndDetails">
-        <h7>cloudy</h7>
-        <p>10°</p>
+        <h7>{details}</h7>
+        <p>{Math.round(temp) + "° " + toggleUnits()}</p>
       </div>
       <div className="humidityAndWind">
         <div className="temperature">
           <UilTemperatureHalf size={16} />
           <p>Real fell:</p>
-          <span>20°</span>
+          <span>{Math.round(feels_like) + "°"}</span>
         </div>
         <div className="humidity">
           <UilTear size={16} />
           <p>Humidity:</p>
-          <span>100%</span>
+          <span>{humidity + "%"}</span>
         </div>
         <div className="wind">
           <UilWind size={16} />

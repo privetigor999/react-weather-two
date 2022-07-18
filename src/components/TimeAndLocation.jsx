@@ -1,9 +1,9 @@
 import React from "react";
-
-const TimeAndLocation = ({ weather: { name, country } }) => {
+import { formatToLocalTime } from "./services/service";
+const TimeAndLocation = ({ weather: { dt, timezone, name, country } }) => {
   return (
     <div className="timeAndLocation">
-      <p>Time and location</p>
+      <p>{formatToLocalTime(dt, timezone)}</p>
       <h1>{`${name}, ${country}`}</h1>
     </div>
   );

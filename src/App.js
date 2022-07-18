@@ -10,7 +10,6 @@ function App() {
   const [query, setQuery] = useState({ q: "moscow" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
-
   useEffect(() => {
     const fetchWeather = async () => {
       await getFormattedWeatherData({ ...query, units }).then((data) => {
@@ -23,13 +22,13 @@ function App() {
   return (
     <div className="App">
       <div className="wrapper">
-        <TopButtons />
-        <Inputs />
+        <TopButtons setQuery={setQuery} />
+        <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
 
         {weather && (
           <>
             <TimeAndLocation weather={weather} />
-            <TemperatureAndDetails weather={weather} />
+            <TemperatureAndDetails weather={weather} units={units} />
           </>
         )}
       </div>
