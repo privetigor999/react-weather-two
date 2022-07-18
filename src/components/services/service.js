@@ -1,7 +1,7 @@
 import { DateTime } from "luxon";
 
 const API_KEY = "f873c561e82e3ce4928e020d5900b4da";
-const BASE_URL = `http://api.openweathermap.org/data/2.5`;
+const BASE_URL = `https://api.openweathermap.org/data/2.5`;
 
 // `http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=410f4d0fdda24873e9cacf4cdbfc1341`
 
@@ -58,7 +58,7 @@ const formatToLocalTime = (
   format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
 ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
-const iconUrl = (code) => `http://openweathermap.org/img/wn/${code}@2x.png`;
+const iconUrl = (code) => `https://openweathermap.org/img/wn/${code}@2x.png`;
 
 export default getFormattedWeatherData;
 export { formatToLocalTime, iconUrl };
