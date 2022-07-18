@@ -10,7 +10,7 @@
 
 - OpenWeather API
 
-## Librarys:
+## Libraries:
 
 - IconScout (for logo)
 - Luxon (for date)
