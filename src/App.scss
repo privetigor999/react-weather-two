@@ -1,6 +1,6 @@
 .App {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .wrapper {
@@ -134,4 +134,27 @@
       }
     }
   }
+}
+
+// Responsive
+
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 1199px) {
+  .wrapper {
+    width: 1000px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .wrapper {
+    width: 900px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .wrapper {
+    width: 700px;
+    padding: 20px 100px;
+  }
+}
+@media screen and (max-width: 575px) {
 }
