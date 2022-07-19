@@ -11,24 +11,24 @@ const TemperatureAndDetails = ({
   };
   return (
     <div className="weatherDetails">
-      <img src={iconUrl(icon)} />
+      <img src={iconUrl(icon)} className="weatherImg" />
       <div className="temperatureAndDetails">
         <h7>{details}</h7>
         <p>{Math.round(temp) + "° " + toggleUnits()}</p>
       </div>
       <div className="humidityAndWind">
         <div className="temperature">
-          <UilTemperatureHalf size={16} />
+          <UilTemperatureHalf className="rightSidesImgs" />
           <p>Real fell:</p>
-          <span>{Math.round(feels_like) + "°"}</span>
+          <span>{Math.round(feels_like) + "° " + toggleUnits()}</span>
         </div>
         <div className="humidity">
-          <UilTear size={16} />
+          <UilTear className="rightSidesImgs" />
           <p>Humidity:</p>
           <span>{humidity + "%"}</span>
         </div>
         <div className="wind">
-          <UilWind size={16} />
+          <UilWind className="rightSidesImgs" />
           <p>Wind:</p>
           <span>10 km/h</span>
         </div>

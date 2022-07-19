@@ -103,6 +103,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  .weatherImg {
+    width: 100px;
+  }
   .temperatureAndDetails {
     display: flex;
     width: 100%;
@@ -129,8 +133,13 @@
       align-items: center;
       color: #ffffff;
       font-size: 14px;
+
       p {
         padding: 0 5px;
+      }
+      .rightSidesImgs {
+        width: 20px;
+        height: 20px;
       }
     }
   }
@@ -153,8 +162,75 @@
 @media screen and (max-width: 767px) {
   .wrapper {
     width: 700px;
-    padding: 20px 100px;
+    padding: 20px 80px;
   }
 }
 @media screen and (max-width: 575px) {
+  .wrapper {
+    width: 300px;
+    padding: 15px 20px;
+  }
+  .topButtons {
+    button {
+      font-size: 10px;
+    }
+  }
+  .inputs {
+    .leftSide {
+      input {
+        width: 150px;
+        font-size: 10px;
+      }
+      .image {
+        width: 20px;
+      }
+    }
+    .rightSide {
+      button {
+        font-size: 15px;
+        padding: 2px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  .timeAndLocation {
+    p {
+      font-size: 10px;
+    }
+    h1 {
+      padding-top: 20px;
+      font-size: 20px;
+    }
+  }
+  .weatherDetails {
+    flex-wrap: wrap;
+    .weatherImg {
+      flex-basis: 45%;
+      width: 60px;
+    }
+    .temperatureAndDetails {
+      flex-basis: 45%;
+      h7 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 30px;
+      }
+    }
+    .humidityAndWind {
+      flex-basis: 100%;
+      align-items: center;
+      .humidity,
+      .wind,
+      .temperature {
+        font-size: 14px;
+        .rightSidesImgs {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
 }

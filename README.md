@@ -1,5 +1,9 @@
 # Weather-react-app
 
+## GitPage:
+
+https://privetigor999.github.io/react-weather-two/
+
 ## Tools:
 
 - JavaScript
@@ -12,5 +16,5 @@
 
 ## Libraries:
 
-- IconScout (for logo)
+- IconScout (for icons)
 - Luxon (for date)
