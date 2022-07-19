@@ -5,6 +5,7 @@ import Inputs from "./components/Inputs";
 import TimeAndLocation from "./components/TimeAndLocation";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
 import getFormattedWeatherData from "./components/services/service";
+import Footer from "./components/Footer";
 
 function App() {
   const [query, setQuery] = useState({ q: "moscow" });
@@ -31,6 +32,7 @@ function App() {
             <TemperatureAndDetails weather={weather} units={units} />
           </>
         )}
+        <Footer />
       </div>
     </div>
   );

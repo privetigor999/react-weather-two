@@ -1,14 +1,15 @@
 .App {
   display: flex;
   justify-content: space-between;
+  background: linear-gradient(45deg, rgb(96, 96, 184), #5fa7c9);
 }
 
 .wrapper {
-  width: 800px;
+  max-width: 1024px;
   height: 100vh;
   margin: 0 auto;
-  background: linear-gradient(45deg, rgb(96, 96, 184), #5fa7c9);
   padding: 20px 150px;
+  position: relative;
 }
 
 .topButtons {
@@ -32,7 +33,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 40px;
   .leftSide {
     display: flex;
     align-items: center;
@@ -89,7 +90,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 40px;
   color: #ffffff;
   p {
     font-weight: 100;
@@ -103,7 +104,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
   .weatherImg {
     width: 100px;
   }
@@ -113,7 +113,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    h7 {
+    h1 {
       color: #a1e2d8;
     }
     p {
@@ -121,26 +121,63 @@
       font-size: 60px;
     }
   }
-  .humidityAndWind {
+  .tempMinAndMax {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    .humidity,
-    .wind,
-    .temperature {
+    align-items: center;
+    width: 32%;
+    div {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      color: #ffffff;
-      font-size: 14px;
-
-      p {
-        padding: 0 5px;
-      }
-      .rightSidesImgs {
+      .topAndDownTempIcons {
+        color: #ffffff;
         width: 20px;
-        height: 20px;
       }
+      p {
+        color: #ffffff;
+        font-size: 20px;
+      }
+    }
+  }
+}
+.humidityAndWind {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 60px;
+  flex: 1;
+  .humidity,
+  .wind,
+  .temperature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+
+    p {
+      padding: 0 5px;
+    }
+    .rightSidesImgs {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 10px;
+      cursor: pointer;
     }
   }
 }
@@ -158,11 +195,35 @@
   .wrapper {
     width: 900px;
   }
+  .weatherDetails {
+    .tempMinAndMax {
+      div {
+        .topAndDownTempIcons {
+          width: 15px;
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width: 767px) {
   .wrapper {
     width: 700px;
     padding: 20px 80px;
+  }
+  .weatherDetails {
+    .tempMinAndMax {
+      div {
+        .topAndDownTempIcons {
+          width: 13px;
+        }
+        p {
+          font-size: 13px;
+        }
+      }
+    }
   }
 }
 @media screen and (max-width: 575px) {
@@ -205,32 +266,38 @@
     }
   }
   .weatherDetails {
+    display: flex;
     flex-wrap: wrap;
     .weatherImg {
       flex-basis: 45%;
-      width: 60px;
     }
     .temperatureAndDetails {
       flex-basis: 45%;
-      h7 {
-        font-size: 20px;
-      }
       p {
         font-size: 30px;
       }
     }
-    .humidityAndWind {
+    .tempMinAndMax {
       flex-basis: 100%;
+      flex-direction: row;
+      justify-content: space-between;
       align-items: center;
-      .humidity,
-      .wind,
-      .temperature {
-        font-size: 14px;
-        .rightSidesImgs {
-          width: 14px;
-          height: 14px;
+      margin-top: 20px;
+      div {
+        .topAndDownTempIcons {
+          width: 25px;
+        }
+        p {
+          font-size: 18px;
         }
       }
+    }
+  }
+  .humidityAndWind {
+    flex-direction: column;
+    .temperature,
+    .humidity {
+      padding-bottom: 10px;
     }
   }
 }

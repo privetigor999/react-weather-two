@@ -1,25 +1,44 @@
 import React from "react";
-import { UilTemperatureHalf, UilTear, UilWind } from "@iconscout/react-unicons";
+import {
+  UilTemperatureHalf,
+  UilTear,
+  UilWind,
+  UilTemperature,
+  UilTemperatureEmpty,
+  UilWindsock,
+} from "@iconscout/react-unicons";
 import { iconUrl } from "./services/service";
 
 const TemperatureAndDetails = ({
-  weather: { icon, humidity, temp, feels_like, details },
+  weather: { icon, humidity, temp, feels_like, details, temp_min, temp_max },
   units,
 }) => {
   const toggleUnits = () => {
     return units == "metric" ? "C" : "F";
   };
   return (
-    <div className="weatherDetails">
-      <img src={iconUrl(icon)} className="weatherImg" />
-      <div className="temperatureAndDetails">
-        <h7>{details}</h7>
-        <p>{Math.round(temp) + "° " + toggleUnits()}</p>
+    <>
+      <div className="weatherDetails">
+        <img src={iconUrl(icon)} className="weatherImg" />
+        <div className="temperatureAndDetails">
+          <h1>{details}</h1>
+          <p>{Math.round(temp) + "° " + toggleUnits()}</p>
+        </div>
+        <div className="tempMinAndMax">
+          <div>
+            <UilTemperature className="topAndDownTempIcons" />
+            <p> max: {Math.round(temp_max) + "° " + toggleUnits()}</p>
+          </div>
+          <div>
+            <UilTemperatureEmpty className="topAndDownTempIcons" />
+            <p> min: {Math.round(temp_min) + "° " + toggleUnits()}</p>
+          </div>
+        </div>
       </div>
       <div className="humidityAndWind">
         <div className="temperature">
           <UilTemperatureHalf className="rightSidesImgs" />
-          <p>Real fell:</p>
+          <p>Fells like:</p>
           <span>{Math.round(feels_like) + "° " + toggleUnits()}</span>
         </div>
         <div className="humidity">
@@ -28,12 +47,12 @@ const TemperatureAndDetails = ({
           <span>{humidity + "%"}</span>
         </div>
         <div className="wind">
-          <UilWind className="rightSidesImgs" />
+          <UilWindsock className="rightSidesImgs" />
           <p>Wind:</p>
           <span>10 km/h</span>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
