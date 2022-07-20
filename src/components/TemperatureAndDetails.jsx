@@ -9,7 +9,16 @@ import {
 import { iconUrl } from "./services/service";
 
 const TemperatureAndDetails = ({
-  weather: { icon, humidity, temp, feels_like, details, temp_min, temp_max },
+  weather: {
+    icon,
+    humidity,
+    temp,
+    feels_like,
+    details,
+    temp_min,
+    temp_max,
+    speed,
+  },
   units,
 }) => {
   const toggleUnits = () => {
@@ -48,7 +57,7 @@ const TemperatureAndDetails = ({
         <div className="wind">
           <UilWindsock className="rightSidesImgs" />
           <p>Wind:</p>
-          <span>10 km/h</span>
+          <span>{speed.toFixed(1)} km/h</span>
         </div>
       </div>
     </>
