@@ -19,7 +19,6 @@ const formatCurrentWeather = (data) => {
     name,
     dt,
     weather,
-    timezone,
     sys: { country },
     wind: { speed },
   } = data;
@@ -33,7 +32,6 @@ const formatCurrentWeather = (data) => {
     temp_min,
     temp_max,
     humidity,
-    timezone,
     dt,
     name,
     details,
@@ -52,11 +50,8 @@ const getFormattedWeatherData = async (searchParams) => {
   return formattedWeatherData;
 };
 
-const formatToLocalTime = (
-  secs,
-  zone,
-  format = "cccc, dd LLL yyyy' | Local time: 'hh:mm a"
-) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
+const formatToLocalTime = (secs, zone, format = "cccc, dd LLL yyyy'") =>
+  DateTime.fromSeconds(secs).toFormat(format);
 
 const iconUrl = (code) => `https://openweathermap.org/img/wn/${code}@2x.png`;
 
