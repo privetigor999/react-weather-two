@@ -2,7 +2,6 @@ import React from "react";
 import {
   UilTemperatureHalf,
   UilTear,
-  UilWind,
   UilTemperature,
   UilTemperatureEmpty,
   UilWindsock,

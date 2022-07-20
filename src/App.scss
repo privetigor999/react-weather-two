@@ -144,9 +144,9 @@
 .humidityAndWind {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-around;
-
+  padding-top: 30px;
   flex: 1;
   .humidity,
   .wind,
@@ -169,10 +169,10 @@
 }
 
 footer {
+  align-items: flex-end;
   .footer {
     display: flex;
     justify-content: space-between;
-    flex: 1;
     a {
       color: #ffffff;
       text-decoration: none;
@@ -297,6 +297,9 @@ footer {
   }
   .humidityAndWind {
     flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
     .temperature,
     .humidity {
       padding-bottom: 6px;
