@@ -3,6 +3,11 @@
   justify-content: space-between;
   background: linear-gradient(45deg, rgb(96, 96, 184), #5fa7c9);
 }
+.App1 {
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(45deg, rgb(2, 103, 67), #000000);
+}
 
 .wrapper {
   max-width: 1024px;
@@ -27,6 +32,49 @@
   button:hover {
     transform: scale(1.1);
   }
+}
+.switchWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  p {
+    color: #ffffff;
+    font-size: 14px;
+  }
+  .switch {
+    position: relative;
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: inset 0px 0px 3px rgba($color: #000000, $alpha: 0.5);
+    margin-left: 10px;
+    .checkbox {
+      visibility: hidden;
+    }
+    .checkboxLabel {
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      content: url("../public/weather.png");
+      background: #c2c2c2;
+      z-index: 1;
+      transition: left 0.2s ease-in-out;
+      box-shadow: 1px 1px 2px rgba($color: #000000, $alpha: 0.3);
+      cursor: pointer;
+    }
+    .checkbox:checked + .checkboxLabel {
+      content: none;
+      left: 32px;
+      background: linear-gradient(180deg, rgba(96, 96, 184, 0.3), #5fa7c9);
+    }
+  }
+  margin-bottom: 20px;
 }
 
 .inputs {

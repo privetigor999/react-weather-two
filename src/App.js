@@ -6,6 +6,7 @@ import TimeAndLocation from "./components/TimeAndLocation";
 import TemperatureAndDetails from "./components/TemperatureAndDetails";
 import getFormattedWeatherData from "./components/services/service";
 import Footer from "./components/Footer";
+import Switch from "./components/Switch";
 
 function App() {
   const [query, setQuery] = useState({ q: "moscow" });
@@ -19,11 +20,14 @@ function App() {
     };
     fetchWeather();
   }, [query, units]);
-
+  const [isChecked, setIsChecked] = React.useState(false);
+  console.log(isChecked);
   return (
-    <div className="App">
+    <div className={isChecked ? "App1" : "App"}>
       <div className="wrapper">
+        <Switch isChecked={isChecked} setIsChecked={setIsChecked} />
         <TopButtons setQuery={setQuery} />
+
         <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
 
         {weather && (
