@@ -21,7 +21,6 @@ function App() {
     fetchWeather();
   }, [query, units]);
   const [isChecked, setIsChecked] = React.useState(false);
-  console.log(isChecked);
   return (
     <div className={isChecked ? "App1" : "App"}>
       <div className="wrapper">

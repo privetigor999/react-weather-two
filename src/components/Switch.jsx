@@ -7,7 +7,7 @@ const Switch = ({ setIsChecked, isChecked }) => {
       <div className="switch">
         <input type="checkbox" className="checkbox" id="checkbox" />
         <label
-          for="checkbox"
+          htmlFor="checkbox"
           className="checkboxLabel"
           onClick={() => setIsChecked(!isChecked)}
         ></label>
